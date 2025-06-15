@@ -1,0 +1,35 @@
+h2 {
+  font-family: monospace;
+  text-align: center;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-family: monospace;
+}
+
+.calendar-nav button {
+  margin: 0 1rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.calendar {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: monospace;
+}
+
+.calendar th,
+.calendar td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 4px;
+  width: 14.28%;
+}
+
+.other-month {
+  color: #aaa;
+}
