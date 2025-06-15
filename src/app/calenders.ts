@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-calenders',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, DatePipe],
   templateUrl: './calenders.html',
   styleUrl: './calenders.css'
 })
