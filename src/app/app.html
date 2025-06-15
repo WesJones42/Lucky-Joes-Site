@@ -1,32 +1,36 @@
 <div class="top-bar">
-  <div class="nav-left">
-    <a routerLink="/calenders">Calender</a>
-    <a href="#">Menu</a>
-    <a href="#">Hours</a>
-  </div>
 
+
+<div class="logo-container">
   <a routerLink="/">
     <img src="lucky-joes-logo.png" class="logo" />
   </a>
-
-  <div class="nav-right">
-    <a href="#">Photos</a>
-    <a href="#">Merch</a>
-    <a href="#">Careers</a>
-  </div>
-
-  <div class="profile-link">
-    <a href="#">Profile</a>
-  </div>
 </div>
 
-<hr />
+
+
+
+</div>
+
+<hr/>
 
 <div class="bottom-section">
-  <div class="main-images">
-    <img src="bar-left.jpg" alt="Lucky Joe's Bar Left" />
-    <img src="bar-right.jpg" alt="Lucky Joe's Bar Right" />
+  <div class="nav-row">
+    <div class="nav-left">
+      <a href="#">Photos</a>
+      <a href="#">Merch</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="nav-right">
+      <a routerLink="/calenders">Calender</a>
+      <a href="#">Menu</a>
+      <a href="#">Hours</a>
+    </div>
   </div>
 </div>
+
+
+<hr>
 
 <router-outlet></router-outlet>

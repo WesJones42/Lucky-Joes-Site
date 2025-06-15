@@ -2,31 +2,72 @@
 .top-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 1rem 2rem;
+  justify-content: space-between;
+  padding: 7rem 3rem;
   flex-wrap: wrap;
+    gap: 0rem;  
+  position: relative; 
+  
+}
+
+
+
+.nav-center {
+  display: flex;
+  justify-content: center;     /* Center horizontally */
+  align-items: center;         /* Center vertically if inside a flex parent */
+  gap: 2rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 2.5rem;
+  margin-top: 0;               /* Reduce top margin */
+  margin-bottom: -8.0rem;      /* Pull it upward toward the logo */
+  position: relative;
+  z-index: 5;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-center a:hover {
+  text-decoration: underline;
 }
 
 .nav-left,
 .nav-right {
   display: flex;
+  justify-content: center;  /* 👈 centers links inside left/right section */
   gap: 1.5rem;
-  font-family: monospace;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
 }
 
-.nav-left {
-  margin-right: auto;
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
 
-.nav-right {
-  margin-left: auto;
+.nav-left a:hover,
+.nav-right a:hover {
+  border-bottom: 2px solid #2a6335;
+}
+
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25%); /* Adjust vertical overlap here */
+  z-index: 10;
 }
 
 .logo {
-  height: 120px;
-  margin: 0 2rem;
+  height: 350px;
+  background: white; /* optional: helps the logo pop */
+  border-radius: 60%;
+  padding: 0.4rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle depth */
 }
 
 .profile-link {
@@ -40,14 +81,47 @@
 hr {
   border: none;
   border-top: 3px solid black;
-  margin: 1rem 0;
+  margin: 0rem 0;
 }
 
 .bottom-section {
-  background-color: #3e904d; /* 🍀 Lucky Joe's green */
+  background-color: #3e904d;
+  padding: 2rem 0;
   width: 100vw;
-  padding: 3rem 0;
   margin: 0;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between; /* ← pushes nav-left and nav-right to edges */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+}
+
+
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.nav-left a,
+.nav-right a {
+  text-decoration: none;
+  color: white;
+}
+
+.full-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .main-images {
