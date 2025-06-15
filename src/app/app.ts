@@ -9,4 +9,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected title = 'lucky-joes-site';
+  cheese = "assets/lucky-joes-logo.png"
 }
