@@ -19,9 +19,14 @@
       <td
         *ngFor="let day of week"
         [class.other-month]="day.getMonth() !== currentDate.getMonth()"
+        [class.today]="isToday(day)"
+        [class.selected]="isSelected(day)"
+        (click)="selectDate(day)"
       >
         {{ day.getDate() }}
       </td>
     </tr>
   </tbody>
 </table>
+
+<p *ngIf="selectedDate" class="selected-info">Selected: {{ selectedDate | date:'fullDate' }}</p>

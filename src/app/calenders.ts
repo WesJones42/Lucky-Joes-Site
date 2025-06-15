@@ -10,6 +10,7 @@ import { NgFor } from '@angular/common';
 })
 export class Calenders {
   currentDate = new Date();
+  selectedDate: Date | null = null;
 
   get monthLabel(): string {
     return this.currentDate.toLocaleString('default', {
@@ -36,6 +37,21 @@ export class Calenders {
       this.currentDate.getMonth() + 1,
       1
     );
+  }
+
+  selectDate(date: Date): void {
+    this.selectedDate = date;
+  }
+
+  isSelected(date: Date): boolean {
+    return (
+      this.selectedDate?.toDateString() === date.toDateString()
+    );
+  }
+
+  isToday(date: Date): boolean {
+    const today = new Date();
+    return today.toDateString() === date.toDateString();
   }
 
   private buildCalendar(date: Date): Date[][] {
