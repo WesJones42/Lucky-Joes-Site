@@ -20,6 +20,11 @@ export class Home {
     'B-Roll5.jpg',
     'B-Roll6.jpg'
   ];
+  slide3 = [
+    'B-Roll7.jpg',
+    'B-Roll8.jpg',
+    'B-Roll9.jpg'
+  ];
 }
 
 
