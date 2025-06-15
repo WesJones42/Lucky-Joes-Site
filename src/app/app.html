@@ -1,11 +1,13 @@
 <div class="top-bar">
   <div class="nav-left">
-    <a href="#">Calender</a>
+    <a routerLink="/calenders">Calender</a>
     <a href="#">Menu</a>
     <a href="#">Hours</a>
   </div>
 
-  <img src="assets/lucky-joes-logo.png" alt="Lucky Joe's Logo" class="logo" />
+  <a routerLink="/">
+    <img src="assets/lucky-joes-logo.png" alt="Lucky Joe's Logo" class="logo" />
+  </a>
 
   <div class="nav-right">
     <a href="#">Photos</a>
@@ -20,7 +22,4 @@
 
 <hr />
 
-<div class="main-images">
-  <img src="assets/bar-left.jpg" alt="Lucky Joe's Bar Left" />
-  <img src="assets/bar-right.jpg" alt="Lucky Joe's Bar Right" />
-</div>
+<router-outlet></router-outlet>
