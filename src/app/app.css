@@ -9,37 +9,32 @@
   position: relative; 
   
 }
+.nav-center{
+  display: none;
+}
 
-
-
-.nav-center {
+.app-wrapper {
   display: flex;
-  justify-content: center;     /* Center horizontally */
-  align-items: center;         /* Center vertically if inside a flex parent */
-  gap: 2rem;
-  font-family: 'Trebuchet MS', sans-serif;
-  font-size: 2.5rem;
-  margin-top: 0;               /* Reduce top margin */
-  margin-bottom: -8.0rem;      /* Pull it upward toward the logo */
-  position: relative;
-  z-index: 5;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.nav-center a {
-  text-decoration: none;
-  color: inherit;
+/* Main content should flex-grow to fill the remaining space */
+.content {
+  flex: 1;
+  /* Optionally add padding or background here */
 }
 
-.nav-center a:hover {
-  text-decoration: underline;
-}
-
-.nav-left,
-.nav-right {
-  display: flex;
-  justify-content: center;  /* 👈 centers links inside left/right section */
-  gap: 1.5rem;
-  font-size: 2.5rem;
+/* Footer note styling */
+.footer-note {
+  background-color: #016c38;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  border-top: 3px solid gold;
+  border-bottom: 3px solid gold;
+  font-size: 1.5;
 }
 
 
@@ -50,7 +45,7 @@ a:hover, a:visited, a:link, a:active
 
 .nav-left a:hover,
 .nav-right a:hover {
-  border-bottom: 2px solid #2a6335;
+  border-bottom: 2px solid #ecef31;
 }
 
 
@@ -64,8 +59,9 @@ a:hover, a:visited, a:link, a:active
 
 .logo {
   height: 350px;
-  background: white; /* optional: helps the logo pop */
+  background: rgba(255, 242, 2, 0.913); /* optional: helps the logo pop */
   border-radius: 60%;
+  
   padding: 0.4rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle depth */
 }
@@ -78,27 +74,27 @@ a:hover, a:visited, a:link, a:active
   font-size: 1.2rem;
 }
 
-hr {
-  border: none;
-  border-top: 3px solid black;
-  margin: 0rem 0;
-}
 
 .bottom-section {
-  background-color: #3e904d;
+  background-color: #016c38;
   padding: 2rem 0;
   width: 100vw;
   margin: 0;
+  height:40px;
+  border-top: 3px solid gold;
+  border-bottom: 3px solid gold;
+  
 }
 
 .nav-row {
   display: flex;
-  justify-content: space-between; /* ← pushes nav-left and nav-right to edges */
+  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 0 2rem;
-  
+  position: relative;
+  z-index: 1;         /* 👈 keep it behind logo but above background */
 }
 
 
@@ -106,15 +102,17 @@ hr {
 .nav-left,
 .nav-right {
   display: flex;
-  gap: 1.5rem;
-  font-size: 2.5rem;
+  gap: 6.5rem;
+  font-size: 3.4rem;
   color: white;
+  
 }
 
 .nav-left a,
 .nav-right a {
   text-decoration: none;
   color: white;
+  
 }
 
 .full-bg-image {
@@ -136,3 +134,155 @@ hr {
   object-fit: cover;
 }
 
+.container {
+  display: flex;
+  height: 100vh; /* Optional: takes full screen height */
+}
+
+.photo-section {
+  flex: 2;
+  overflow: hidden;
+}
+
+.photo-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the section */
+}
+
+.text-section {
+  flex: 1;
+  padding: 2rem;
+  background-color: #ffffff; /* Optional styling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hide on desktop */
+.mobile-dropdown-toggle,
+.mobile-dropdown-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  /* Collapse top-bar layout for mobile */
+  .top-bar {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    align-items: center;
+    
+  }
+
+.mobile-dropdown-toggle {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    background-color: #016c38;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    z-index: 999;
+    position: relative;
+  }
+
+  .mobile-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #016c38;
+    padding: 1rem 0;
+    text-align: center;
+    animation: dropdown-fade 0.3s ease;
+    z-index: 999;
+    position: relative;
+  }
+
+  .mobile-dropdown-menu a {
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
+    position: relative;
+  }
+
+  .mobile-dropdown-menu a:first-child {
+    border-top: none;
+  }
+
+  @keyframes dropdown-fade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Hide nav-center grid (if you still have it) */
+body.sidebar-open {
+  overflow: hidden; /* prevents background scrolling */
+}
+
+
+  .logo-container {
+    position: relative;
+    transform: none;
+    top: 0;
+    left: 0;
+    margin-bottom: 0rem;
+    z-index: 1;  /* ⬅ Lower than hamburger */
+    position: relative;
+  }
+
+  .logo {
+    height: 250px; /* Shrink logo */
+    padding: 0.2rem;
+  }
+
+  .profile-link {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* Adjust container to vertical stack */
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .photo-section,
+  .text-section {
+    width: 100%;
+    flex: set;
+    height: auto;
+  }
+
+  .photo-section img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .text-section {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .main-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-images img {
+    max-width: 80%;
+  }
+
+.bottom-section {
+  display: none;
+  
+}
+
+
+}

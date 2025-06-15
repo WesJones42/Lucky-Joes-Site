@@ -1,36 +1,48 @@
-<div class="top-bar">
-
-
-<div class="logo-container">
-  <a routerLink="/">
-    <img src="lucky-joes-logo.png" class="logo" />
-  </a>
-</div>
-
-
-
-
-</div>
-
-<hr/>
-
-<div class="bottom-section">
-  <div class="nav-row">
-    <div class="nav-left">
-      <a href="#">Photos</a>
-      <a href="#">Merch</a>
-      <a href="#">Careers</a>
+<div class="app-wrapper">
+  <header>
+    <div class="top-bar">
+      <div class="logo-container">
+        <a routerLink="/"><img src="lucky-joes-logo.png" class="logo" /></a>
+      </div>
     </div>
-
-    <div class="nav-right">
-      <a routerLink="/calenders">Calender</a>
-      <a href="#">Menu</a>
-      <a href="#">Hours</a>
+    <div class="bottom-section">
+      <!-- Desktop Nav -->
+      <div class="nav-row desktop-nav">
+        <div class="nav-left">
+          <a href="#">Merch</a>
+          <a routerLink="/menu">Menu</a>
+          <a routerLink="/drinks">Drinks</a>
+        </div>
+        <div class="nav-right">
+          <a href="#">Events</a>
+          <a href="#">Hours</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
     </div>
-  </div>
+    <!-- Mobile Hamburger Button -->
+    <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
+      &#9776;
+    </div>
+    <!-- Mobile Dropdown Menu -->
+    @if (dropdownOpen) {
+      <div class="mobile-dropdown-menu">
+        <a href="#">Merch</a>
+        <a href="#">Hours</a>
+        <a href="#">Events</a>
+        <a href="#">Food</a>
+      </div>
+    }
+  </header>
+
+  <!-- Main content that fills the available space -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer remains at the bottom -->
+  <footer class="footer-note">
+    <p>(970) 493-2213</p>
+    <p>25 Old Town Square Fort Collins CO, 80524</p>
+  </footer>
 </div>
-
-
-<hr>
-
-<router-outlet></router-outlet>
