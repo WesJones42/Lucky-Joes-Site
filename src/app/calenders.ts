@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-calenders',
   standalone: true,
+  imports: [NgFor],
   templateUrl: './calenders.html',
   styleUrl: './calenders.css'
 })
