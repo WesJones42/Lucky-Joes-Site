@@ -43,3 +43,22 @@ hr {
   margin: 1rem 0;
 }
 
+.bottom-section {
+  background-color: #3e904d; /* 🍀 Lucky Joe's green */
+  width: 100vw;
+  padding: 3rem 0;
+  margin: 0;
+}
+
+.main-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.main-images img {
+  max-width: 40%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
