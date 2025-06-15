@@ -1,0 +1,59 @@
+/* Layout styling */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+
+.nav-left {
+  margin-right: auto;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+.logo {
+  height: 120px;
+  margin: 0 2rem;
+}
+
+.profile-link {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid black;
+  margin: 1rem 0;
+}
+
+/* Main image styling */
+.main-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.main-images img {
+  width: 48%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
