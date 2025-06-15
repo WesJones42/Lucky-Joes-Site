@@ -6,7 +6,7 @@ import { NgFor, DatePipe } from '@angular/common';
   standalone: true,
   imports: [NgFor, DatePipe],
   templateUrl: './calenders.html',
-  styleUrl: './calenders.css'
+  styleUrls: ['./calenders.css']
 })
 export class Calenders {
   currentDate = new Date();
