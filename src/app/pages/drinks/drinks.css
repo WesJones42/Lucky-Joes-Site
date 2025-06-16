@@ -6,3 +6,32 @@
 margin-top: 3.3rem;
 margin-bottom: 3.2rem;
 }
+
+.desktop-img {
+  display: flex;
+  align-items: center;
+  max-width: 2000px;
+  margin: 0 auto;
+margin-top: 3.3rem;
+margin-bottom: 3.2rem;
+margin-left: 2rem;
+margin-right: 2rem;
+}
+
+.mobile-img {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-img {
+    display: none;
+  }
+  .mobile-img {
+  
+  display: flex;
+  align-items: center;
+  max-width: 2000px;
+  margin:  auto;
+  box-sizing: border-box;
+  }
+}
