@@ -77,17 +77,19 @@ a:hover, a:visited, a:link, a:active
 
 .bottom-section {
   background-color: #016c38;
-  padding: 2rem 0;
-  width: 100vw;
+  padding: 0rem 0;
+  /* width: 100vw; */
   margin: 0;
-  height:40px;
+  height:80px;
   border-top: 3px solid gold;
   border-bottom: 3px solid gold;
+  align-items: center;
   
 }
 
 .nav-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   max-width: 1900px;
@@ -112,6 +114,7 @@ a:hover, a:visited, a:link, a:active
 .nav-right a {
   text-decoration: none;
   color: white;
+  
   
 }
 
