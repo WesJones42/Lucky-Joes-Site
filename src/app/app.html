@@ -24,14 +24,16 @@
     <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
       &#9776;
     </div>
-    <!-- Mobile Dropdown Menu -->
+
     @if (dropdownOpen) {
-      <div class="mobile-dropdown-menu">
-        <a href="#">Merch</a>
-        <a href="#">Hours</a>
+      <div class="mobile-dropdown-menu" (click)="closeDropdown()">
         <a routerLink="/calendar">Events</a>
         <a routerLink="/menu">Food</a>
         <a routerLink="/drinks">Drinks</a>
+        <a href="#">Merch</a>
+        <a href="#">Hours</a>
+
+
       
       </div>
     }

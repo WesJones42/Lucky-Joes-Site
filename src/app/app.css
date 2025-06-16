@@ -176,17 +176,18 @@ a:hover, a:visited, a:link, a:active
   }
 
 .mobile-dropdown-toggle {
-    display: block;
-    font-size: 2rem;
-    color: white;
-    background-color: #016c38;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    z-index: 999;
-    position: relative;
-  }
+  display: flex;                 /* Make it a flex container */
+  justify-content: center;      /* Center horizontally */
+  align-items: center;          /* Center vertically (optional) */
+  font-size: 2rem;
+  color: white;
+  background-color: #016c38;
+  cursor: pointer;
+  width: 100%;
+  z-index: 999;
+  border-top: 3px solid gold;
+  border-bottom: 3px solid gold;
+}
 
   .mobile-dropdown-menu {
     display: flex;
@@ -197,10 +198,12 @@ a:hover, a:visited, a:link, a:active
     animation: dropdown-fade 0.3s ease;
     z-index: 999;
     position: relative;
+    
+  border-bottom: 3px solid gold;
   }
 
   .mobile-dropdown-menu a {
-    font-family: 'Pacifico', cursive;
+    
     color: white;
     font-size: 1.25rem;
     text-decoration: none;
