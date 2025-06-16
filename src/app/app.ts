@@ -18,4 +18,7 @@ export class App {
     this.dropdownOpen = !this.dropdownOpen;
       document.body.classList.toggle('sidebar-open', this.dropdownOpen);
   }
+  closeDropdown() {
+  this.dropdownOpen = false;
+}
 }
