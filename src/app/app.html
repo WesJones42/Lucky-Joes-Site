@@ -1,25 +1,30 @@
 <div class="app-wrapper">
+  <div>
   <header>
-    <div class="top-bar">
-      <div class="logo-container">
-        <a routerLink="/"><img src="lucky-joes-logo.png" class="logo" /></a>
-      </div>
-    </div>
     <div class="bottom-section">
-      <!-- Desktop Nav -->
-      <div class="nav-row desktop-nav">
-        <div class="nav-left">
-          <a href="#">Merch</a>
-          <a routerLink="/menu">Menu</a>
-          <a routerLink="/drinks">Drinks</a>
-        </div>
-        <div class="nav-right">
-          <a href="/calendar">Events</a>
-          <a href="#">Hours</a>
-          <a href="#">Contact</a>
-        </div>
+      <div class="logo-container">
+        <a routerLink="/"><img src="lucky-joes-logo2.png" class="logo" /></a>
       </div>
+    
+      <!-- Desktop Nav -->
+<div class="nav-row">
+  <div class="nav-group nav-left">
+    <a href="#">Merch</a>
+    <a routerLink="/menu">Menu</a>
+    <a routerLink="/drinks">Drinks</a>
+  </div>
+
+  <!-- spacer to reserve space for logo -->
+  <div class="nav-spacer"></div>
+
+  <div class="nav-group nav-right">
+    <a href="/calendar">Events</a>
+    <a href="#">Hours</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
     </div>
+  
     <!-- Mobile Hamburger Button -->
     <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
       &#9776;
