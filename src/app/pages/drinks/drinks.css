@@ -2,20 +2,17 @@
   display: flex;
   align-items: center;
   max-width: 2000px;
-  margin: 0 auto;
-margin-top: 3.3rem;
-margin-bottom: 3.2rem;
+
 }
 
 .desktop-img {
   display: flex;
   align-items: center;
   max-width: 2000px;
-  margin: 0 auto;
-margin-top: 3.3rem;
-margin-bottom: 3.2rem;
-margin-left: 2rem;
-margin-right: 2rem;
+margin: 3.3rem auto 3.2rem auto;
+padding: 0 0rem; /* Adds breathing room without breaking centering */
+
+border:  5px solid #C5B358;
 }
 
 .mobile-img {
@@ -27,7 +24,7 @@ margin-right: 2rem;
     display: none;
   }
   .mobile-img {
-  
+  width: 100%;
   display: flex;
   align-items: center;
   max-width: 2000px;
