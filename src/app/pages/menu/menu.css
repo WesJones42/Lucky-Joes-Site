@@ -5,4 +5,25 @@
   margin: 0 auto;
 margin-top: 3.3rem;
 margin-bottom: 3.2rem;
+border:  5px solid #C5B358;
+}
+.mobile-img {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+.mobile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;              /* Ensures it never overflows viewport */
+  max-width: 1000px;        /* Optional upper limit */
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
 }
