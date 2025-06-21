@@ -37,7 +37,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/lucky-joes-site/",
+              "baseHref": "/Lucky-Joes-Site/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "lucky-joes-site:build:production"
+              "browserTarget": "Lucky-Joes-Site:build:production"
             },
             "development": {
-              "browserTarget": "lucky-joes-site:build:development"
+              "browserTarget": "Lucky-Joes-Site:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lucky-joes-site:build"
+            "browserTarget": "Lucky-Joes-Site:build"
           }
         },
         "test": {
