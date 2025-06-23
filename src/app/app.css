@@ -77,7 +77,7 @@ a:hover::after {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Adjust vertical overlap here */
+  transform:  translate(-50%, -50%); /* Adjust vertical overlap here */
   z-index: 2;
 }
 
