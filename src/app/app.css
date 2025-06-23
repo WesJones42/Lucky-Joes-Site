@@ -83,7 +83,7 @@ a:hover::after {
 }
 
 .logo {
-  height: 400px;
+  height: 380px;
    /* optional: helps the logo pop */
   border-radius: 10%;
   
@@ -110,7 +110,7 @@ a:hover::after {
   background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
-  height: 380px;
+  height: 350px;
   border-top: 5px solid #C5B358;
   border-bottom: 5px solid #C5B358;
   position: relative; /* Needed for absolute positioning of child */
