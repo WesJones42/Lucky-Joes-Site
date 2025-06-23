@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
-import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -21,10 +20,5 @@ export class App {
   }
   closeDropdown() {
   this.dropdownOpen = false;
-  }
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollY = window.scrollY;
-    document.body.style.backgroundPosition = `center ${scrollY * -0.3}px`;
-  }
+}
 }
