@@ -69,5 +69,34 @@ margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1vw;
+  border: 3px solid #C5B358;
+}
+.text-section-top {
+  flex: 1; /* 1/3 of the width */
+  color: #C5B358;
+  padding: 2rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   font-size: 2vw;
+  border: 3px solid #C5B358;
+  border-top: none;
+}
+.text-section-bottom {
+  flex: 1; /* 1/3 of the width */
+  color: #C5B358;
+
+  padding: 2rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   font-size: 1vw;;
+  border: 3px solid #C5B358;
+  border-bottom: none;
+
   font-size: 3.0rem;
+
 }
