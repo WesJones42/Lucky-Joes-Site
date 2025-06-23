@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-  background-color: #000000;
+  background: url('../public/old-map-1920x1080.png') repeat center center;
   font-family: 'Lobster', cursive;
     margin: 0;
   padding: 0;

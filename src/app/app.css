@@ -27,7 +27,8 @@
 
 /* Footer note styling */
 .footer-note {
-  background-color: #016c38;
+  background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
+
   color: white;
   text-align: center;
   padding: 1rem 0;
@@ -106,7 +107,7 @@ a:hover::after {
 
 
 .bottom-section {
-  background-color: #016c38;
+  background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
   height: 380px;
@@ -237,7 +238,7 @@ a:hover::after {
   align-items: center;          /* Center vertically (optional) */
   font-size: 2rem;
   color: white;
-  background-color: #016c38;
+    background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   cursor: pointer;
   width: 100%;
   z-index: 999;
@@ -248,7 +249,8 @@ a:hover::after {
   .mobile-dropdown-menu {
     display: flex;
     flex-direction: column;
-    background-color: #016c38;
+      background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
+
     padding: 1rem 0;
     text-align: center;
     animation: dropdown-fade 0.3s ease;
@@ -338,7 +340,7 @@ body.sidebar-open {
   }
 
 .bottom-section {
-  background-color: #016c38;
+background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
   height: 300px;
