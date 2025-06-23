@@ -5,7 +5,7 @@ body {
     margin: 0;
   padding: 0;
   overflow-x: hidden;
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
   width: 100%;
 }
 * {

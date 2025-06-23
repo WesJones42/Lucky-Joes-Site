@@ -82,7 +82,7 @@ a:hover::after {
 }
 
 .logo {
-  height: 450px;
+  height: 400px;
    /* optional: helps the logo pop */
   border-radius: 10%;
   
@@ -109,7 +109,7 @@ a:hover::after {
   background-color: #016c38;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
-  height: 400px;
+  height: 380px;
   border-top: 5px solid #C5B358;
   border-bottom: 5px solid #C5B358;
   position: relative; /* Needed for absolute positioning of child */
@@ -130,20 +130,22 @@ a:hover::after {
 
 .nav-left {
   display: flex;
-  gap: 6.5rem;
+
+  gap: 6.0rem;
+
   font-size: 3.4rem;
   color: white;
 }
 .nav-right {
   display: flex;
-  gap: 6.5rem;
-  font-size: 4.4rem;
+  gap: 6.0rem;
+  font-size: 2.4rem;
   color: white;
 }
 .nav-group {
   display: flex;
-  gap: 6.5rem;
-  font-size: 4.4rem;
+  gap: 6.0rem;
+  font-size: 3rem;
   color: white;
 }
 .nav-spacer {
