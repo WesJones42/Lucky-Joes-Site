@@ -1,7 +1,7 @@
 .menu {
   display: flex;
   align-items: center;
-  max-width: 1800px;
+  max-width: 2000px;
   margin: 0 auto;
 margin-top: 3.3rem;
 margin-bottom: 3.2rem;
@@ -12,7 +12,7 @@ border:  5px solid #C5B358;
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .menu {
     display: none;
   }

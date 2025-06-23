@@ -132,19 +132,26 @@ a:hover::after {
 
 .nav-left {
   display: flex;
+
   
+
+  
+  
+  gap: 6.5rem;
+  font-size: 3.4rem;
+
   color: white;
 }
 .nav-right {
   display: flex;
-  
-  
+  gap: 6.5rem;
+  font-size: 4.4rem;
   color: white;
 }
 .nav-group {
   display: flex;
-  gap: 5rem;
-  font-size: 1.4rem;
+  gap: 6.5rem;
+  font-size: 4.4rem;
   color: white;
   position: sticky;
   top: 0;
@@ -168,7 +175,6 @@ a:hover::after {
 .nav-right a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 3.4rem;
   
   
 }
@@ -224,6 +230,7 @@ a:hover::after {
 }
 
 @media (max-width: 1800px) {
+
 
   /* Collapse top-bar layout for mobile */
   .top-bar {
@@ -292,7 +299,7 @@ body.sidebar-open {
   position: relative;
   display: flex;
   justify-content: center;
-  margin: 0 0;
+  margin: 0 auto;
   z-index: 1;
 }
 
