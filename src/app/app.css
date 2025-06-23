@@ -144,14 +144,14 @@ a:hover::after {
 }
 .nav-right {
   display: flex;
-  gap: 6.5rem;
-  font-size: 4.4rem;
+  gap: 6.0rem;
+  font-size: 3.4rem;
   color: white;
 }
 .nav-group {
   display: flex;
-  gap: 6.5rem;
-  font-size: 4.4rem;
+  gap: 6.0rem;
+  font-size: 3.4rem;
   color: white;
   position: sticky;
   top: 0;
