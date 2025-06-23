@@ -1,11 +1,11 @@
 /* Global styles */
 body {
-  background: url('C:\Users\Wesjo\Documents\Lucky Joes\lucky-joes-site\public\old-map-1920x1080.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #000000;
   font-family: 'Lobster', cursive;
-  margin: 0;
+    margin: 0;
   padding: 0;
   overflow-x: hidden;
+  outline: 2px solid red;
   width: 100%;
 }
 * {
