@@ -1,14 +1,8 @@
-.menu {
-  display: flex;
-  align-items: center;
-  max-width: 2000px;
-
-}
 
 .desktop-img {
   display: flex;
   align-items: center;
-  max-width: 2000px;
+  max-width: 1800px;
 margin: 3.3rem auto 3.2rem auto;
 padding: 0 0rem; /* Adds breathing room without breaking centering */
 
@@ -19,7 +13,7 @@ border:  5px solid #C5B358;
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .desktop-img {
     display: none;
   }
