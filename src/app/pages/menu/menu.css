@@ -1,14 +1,25 @@
 .menu {
   display: flex;
   align-items: center;
-  max-width: 2000px;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
   margin: 0 auto;
-margin-top: 3.3rem;
-margin-bottom: 3.2rem;
-border:  5px solid #C5B358;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  
+  border: 5px solid #C5B358;
+  box-sizing: border-box;
 }
 .mobile-img {
   display: none;
+}
+.spacer{
+  height: auto;
+  display: block;
+  
 }
 
 
