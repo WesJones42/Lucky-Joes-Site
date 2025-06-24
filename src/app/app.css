@@ -27,7 +27,8 @@
 
 /* Footer note styling */
 .footer-note {
- background: url('..\..\public\asfalt--dark--1920x1080.png') repeat center center fixed;
+  background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
+
   color: white;
   text-align: center;
   padding: 1rem 0;
@@ -82,7 +83,7 @@ a:hover::after {
 }
 
 .logo {
-  height: 400px;
+  height: 380px;
    /* optional: helps the logo pop */
   border-radius: 10%;
   
@@ -106,10 +107,10 @@ a:hover::after {
 
 
 .bottom-section {
-  background: url('..\..\public\asfalt--dark--1920x1080.png') repeat center center fixed;  
+  background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
-  height: 380px;
+  height: 350px;
   border-top: 5px solid #C5B358;
   border-bottom: 5px solid #C5B358;
   position: relative; /* Needed for absolute positioning of child */
@@ -126,20 +127,14 @@ a:hover::after {
   align-items: flex-end; /* ensures same vertical alignment */
   padding: 0 3rem;
   z-index: 1;
-
-  
 }
 
 .nav-left {
   display: flex;
 
-  
-
-  
-  
   gap: 6.0rem;
-  font-size: 3.4rem;
 
+  font-size: 3.4rem;
   color: white;
 }
 .nav-right {
@@ -153,8 +148,6 @@ a:hover::after {
   gap: 6.0rem;
   font-size: 3rem;
   color: white;
-  position: sticky;
-  top: 0;
 }
 .nav-spacer {
   width: 450px; /* same width as your logo image */
@@ -229,8 +222,7 @@ a:hover::after {
   display: none;
 }
 
-@media (max-width: 1800px) {
-
+@media (max-width: 768px) {
 
   /* Collapse top-bar layout for mobile */
   .top-bar {
@@ -246,8 +238,7 @@ a:hover::after {
   align-items: center;          /* Center vertically (optional) */
   font-size: 2rem;
   color: white;
-  background: url('..\..\public\asfalt--dark--1920x1080.png') no-repeat center center fixed;  
-
+    background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   cursor: pointer;
   width: 100%;
   z-index: 999;
@@ -258,7 +249,7 @@ a:hover::after {
   .mobile-dropdown-menu {
     display: flex;
     flex-direction: column;
-  background: url('..\..\public\asfalt--dark--1920x1080.png') no-repeat center center fixed;  
+      background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
 
     padding: 1rem 0;
     text-align: center;
@@ -272,7 +263,7 @@ a:hover::after {
   .mobile-dropdown-menu a {
     
     color: white;
-    font-size: 2.25rem;
+    font-size: 1.25rem;
     text-decoration: none;
     padding: 0.75rem 0;
     
@@ -349,7 +340,7 @@ body.sidebar-open {
   }
 
 .bottom-section {
-  background: url('..\..\public\asfalt--dark--1920x1080.png') repeat center center fixed;  
+background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
   height: 300px;
