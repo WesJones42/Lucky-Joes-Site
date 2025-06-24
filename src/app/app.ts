@@ -25,6 +25,6 @@ export class App {
 @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY;
-    document.body.style.backgroundPosition = `center ${scrollY * -0.24}px`;
+    document.body.style.backgroundPosition = `center ${scrollY * -0.2}px`;
   }
 }
