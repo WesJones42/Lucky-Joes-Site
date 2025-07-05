@@ -23,12 +23,27 @@
     <a href="#">Contact</a>
   </div>
 </div>
+    <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
+      &#97754;
     </div>
+        @if (dropdownOpen) {
+      <div class="mobile-dropdown-menu" (click)="closeDropdown()">
+        <a routerLink="/calendar">Events</a>
+        <a routerLink="/menu">Food</a>
+        <a routerLink="/drinks">Drinks</a>
+        <a href="#">Merch</a>
+        <a href="#">Hours</a>
+
+
+      
+      </div>
+    }
+  </div>
   
     <!-- Mobile Hamburger Button -->
-    <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
-      &#9776;
-    </div>
+    <!-- <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
+      &#97754;
+    </div> -->
 
     @if (dropdownOpen) {
       <div class="mobile-dropdown-menu" (click)="closeDropdown()">
@@ -42,6 +57,7 @@
       
       </div>
     }
+    
   </header>
 
   <!-- Main content that fills the available space -->

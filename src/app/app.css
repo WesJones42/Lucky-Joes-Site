@@ -233,7 +233,7 @@ a:hover::after {
   }
 
 .mobile-dropdown-toggle {
-  display: flex;                 /* Make it a flex container */
+  display: flex !important;                 /* Make it a flex container */
   justify-content: center;      /* Center horizontally */
   align-items: center;          /* Center vertically (optional) */
   font-size: 2rem;
@@ -249,12 +249,12 @@ a:hover::after {
   .mobile-dropdown-menu {
     display: flex;
     flex-direction: column;
-      background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
+      /* background: url('../../public/asfalt--dark--1920x1080.png') repeat center center; */
 
     padding: 1rem 0;
     text-align: center;
     animation: dropdown-fade 0.3s ease;
-    z-index: 999;
+    
     position: relative;
     
   border-bottom: 5px solid #C5B358;
@@ -266,8 +266,7 @@ a:hover::after {
     font-size: 2.25rem;
     text-decoration: none;
     padding: 0.75rem 0;
-    
-    z-index: 999;
+    display: flex;
     position: relative;
   }
 
@@ -281,23 +280,23 @@ a:hover::after {
   }
 
   /* Hide nav-center grid (if you still have it) */
-body.sidebar-open {
-  overflow: hidden; /* prevents background scrolling */
-}
+/* body.sidebar-open {
+  overflow: hidden; /* prevents background scrolling 
+} */
 
 
 .logo-container {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin: 0 auto;
   z-index: 1;
 }
 
 .logo {
-  height: 300px;
-  display: block;
-  max-width: 100%;
+  height: 95px;
+  display: flex;
+  max-width: 90%;
 }
 
   .profile-link {
@@ -343,11 +342,11 @@ body.sidebar-open {
 background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
-  height: 300px;
+  height: 90px;
   border-top: 5px solid #C5B358;
   border-bottom: 5px solid #C5B358;
   position: relative; /* Needed for absolute positioning of child */
-  overflow: hidden;   /* Optional: prevents overflow from children */
+  /* overflow: hidden;   Optional: prevents overflow from children */
 }
 .nav-row{
   display:none;
