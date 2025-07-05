@@ -231,44 +231,57 @@ a:hover::after {
     align-items: center;
     
   }
+  .mobile-overlay {
+    position: fixed;
+   
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background: rgba(0, 0, 0, 0); /* Fully transparent but clickable */
+    z-index: 998;
+}
+ .nav-row,
+    .nav-left,
+    .nav-right {
+        display: none;
+    }
 
 .mobile-dropdown-toggle {
-  display: flex !important;                 /* Make it a flex container */
-  justify-content: center;      /* Center horizontally */
-  align-items: center;          /* Center vertically (optional) */
-  font-size: 2rem;
-  color: white;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    z-index: 1001;
+    border-radius: 5px;
     background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
-  cursor: pointer;
-  width: 100%;
-  z-index: 999;
-  
-  border-bottom: 5px solid #C5B358;
 }
 
   .mobile-dropdown-menu {
     display: flex;
     flex-direction: column;
-      /* background: url('../../public/asfalt--dark--1920x1080.png') repeat center center; */
-
-    padding: 1rem 0;
+    align-items: center;
+    background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
+    padding: 2rem 0;
     text-align: center;
     animation: dropdown-fade 0.3s ease;
-    
-    position: relative;
-    
-  border-bottom: 5px solid #C5B358;
-  }
+    border-bottom: 5px solid #C5B358;
+    position: fixed;
+    top: 100px;
+    width: 100vw; 
+    z-index: 999;
+}
 
-  .mobile-dropdown-menu a {
-    
+.mobile-dropdown-menu a {
     color: white;
     font-size: 2.25rem;
     text-decoration: none;
     padding: 0.75rem 0;
-    display: flex;
-    position: relative;
-  }
+    text-align: center;
+}
 
   .mobile-dropdown-menu a:first-child {
     border-top: none;
@@ -286,17 +299,18 @@ a:hover::after {
 
 
 .logo-container {
-  position: relative;
-  display: flex;
-  justify-content: left;
-  margin: 0 auto;
-  z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: none;
+    left: 0;
+    top: 0;
 }
 
 .logo {
-  height: 95px;
-  display: flex;
-  max-width: 90%;
+    height: 85px;
+    max-width: 90%;
 }
 
   .profile-link {
@@ -339,18 +353,27 @@ a:hover::after {
   }
 
 .bottom-section {
-background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
-  padding: 0; /* Remove padding so nav truly hugs bottom */
-  margin: 0;
-  height: 90px;
-  border-top: 5px solid #C5B358;
-  border-bottom: 5px solid #C5B358;
-  position: relative; /* Needed for absolute positioning of child */
-  /* overflow: hidden;   Optional: prevents overflow from children */
+    background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
+    height: 100px;
+    border-top: 5px solid #C5B358;
+    border-bottom: 5px solid #C5B358;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 997;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo left, hamburger right */
+    padding: 0 1rem;
 }
+
 .nav-row{
   display:none;
 }
-
+.content {
+    padding-top: 100px; /* Adjust based on .bottom-section height */
+}
 
 }
