@@ -71,6 +71,7 @@ a::after {
 
 a:hover::after {
   transform: scaleX(1);
+  
 }
 
 
@@ -83,9 +84,9 @@ a:hover::after {
 }
 
 .logo {
-  height: 380px;
+  height: 450px;
    /* optional: helps the logo pop */
-  border-radius: 10%;
+  border-radius: 11%;
   
   padding: 0.0rem; 
  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); subtle depth */
