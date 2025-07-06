@@ -21,27 +21,23 @@
   text-align-last: center;
 
 }
+.sub-text{
+    font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
 
 .heading{
-font-size: 6rem;
+font-size: 4.1rem;
 margin-top: 0;
 margin-bottom: 0;
 
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
 
-  .photo-section, .text-section {
-    width: 100%;
-  }
 
-  .slideshow-img {
-    height: auto;
-  }
-}
+
 
 .photo-section {
   flex: 2;
@@ -61,7 +57,9 @@ margin-bottom: 0;
   height: auto;
   background-color: black;
 }
-
+.slideshow-section-moible {
+  display: none;
+}
 .text-section {
   flex: 1; /* 1/3 of the width */
   color: #C5B358;
@@ -81,7 +79,7 @@ margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-   font-size:1 vw;
+   font-size:1vw;
   border: 3px solid #C5B358;
   border-top: none;
 }
@@ -99,5 +97,82 @@ margin-bottom: 0;
   border-bottom: none;
 
 
+
+}
+
+
+
+
+
+
+@media (max-width: 914px) {
+  .container {
+    display: flex;
+    flex: coll
+
+  }
+
+  .photo-section, .text-section {
+    width: 100%;
+  }
+
+  .slideshow-img {
+    height: auto;
+  }
+  .slideshow-section {
+    display: none;
+}
+.slideshow-section-mobile {
+  flex: 2; /* 2/3 of the width */
+  overflow: hidden;
+  height: auto;
+  background-color: black;
+}
+
+.text-section-mobile {
+  flex: 1; /* 1/3 of the width */
+  color: #C5B358;
+  padding: 2rem;
+  background-color: #00000070;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1vw;
+  border: 3px solid #C5B358;
+
+}
+.text-section-top-mobile {
+    flex: 1;
+    padding: 2rem;
+    min-height: 300px; /* Adjust this number to your preference */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #00000070;
+    border: 3px solid #C5B358;
+    color: #C5B358;
+    width: 80%;
+    box-sizing: border-box;
+}
+.text-section-bottom-mobile {
+  flex: 1; /* 1/3 of the width */
+  color: #C5B358;
+
+  padding: 2rem;
+  background-color: #00000070;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   font-size: 1vw;;
+  border: 3px solid #C5B358;
+  border-bottom: none;
+
+}
+
+.text-section-top,
+.text-section-bottom,
+.text-section{
+  display: none;
+}
 
 }
