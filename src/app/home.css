@@ -15,33 +15,58 @@
 .container {
   display: flex;
   height: auto;
+  align-items: stretch;
+}
+.container-mobile{
+  display:none;
+}
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.66%; /* 4:3 aspect ratio (adjust if needed) */
+  height: 0;
+  overflow: hidden;
+  border: 3px solid #C5B358; /* Optional border */
+}
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .text-section {
   text-align-last: center;
 
 }
+.sub-text{
+    font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5vw;
 
-.heading{
-font-size: 6rem;
+}
+.greeting{
+font-size: 10rem;
 margin-top: 0;
-margin-bottom: 0;
+margin-bottom: 4;
+
+}
+.heading{
+font-size: 6.1rem;
+margin-top: 0;
+margin-bottom: 4;
 
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+.daily-special-mobile{
+  display:none;
 
-  .photo-section, .text-section {
-    width: 100%;
-  }
-
-  .slideshow-img {
-    height: auto;
-  }
 }
+
+
 
 .photo-section {
   flex: 2;
@@ -61,7 +86,9 @@ margin-bottom: 0;
   height: auto;
   background-color: black;
 }
-
+.slideshow-section-mobile {
+  display: none;
+}
 .text-section {
   flex: 1; /* 1/3 of the width */
   color: #C5B358;
@@ -81,11 +108,120 @@ margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-   font-size:1 vw;
+   font-size:1vw;
   border: 3px solid #C5B358;
   border-top: none;
 }
 .text-section-bottom {
+  flex: 1; /* 1/3 of the width */
+  color: #C5B358;
+  
+  padding: 2rem;
+  background-color: #00000070;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   font-size: 1vw;
+    text-align: center;
+  border: 3px solid #C5B358;
+  border-bottom: none;
+
+
+
+}
+.special-today {
+  animation: pop-today 0.4s ease-in-out forwards;
+  background-color: #22222200;
+  border: 2px solid #C5B358;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 15px gold;
+  font-size: 3vw;
+}
+
+@keyframes pop-today {
+  from {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.text-section-bottom-mobile{
+  display: none;
+}
+
+
+
+
+@media (max-width: 914px) {
+  .container-mobile {
+    display: flex;
+    flex-direction: column;
+
+  }
+  .map-container-mobile{
+    display:flex;
+    border: 3px solid #C5B358;
+
+  }
+
+  .photo-section, .text-section {
+    width: 100%;
+  }
+
+  .slideshow-img {
+    height: auto;
+  }
+  .slideshow-section {
+    display: none;
+}
+.slideshow-section-mobile {
+  display:block;
+  flex: 2; /* 2/3 of the width */
+  overflow: hidden;
+  height: 50%;
+  background-color: black;
+  max-height: 660px;
+}
+
+.text-section-mobile {
+  flex: 1; /* 1/3 of the width */
+  color: #C5B358;
+  padding: 2rem;
+  background-color: #00000070;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 6vw;
+  border: 3px solid #C5B358;
+
+}
+
+.heading-mobile{
+  font-size: 12vw;
+
+}
+.greeting-heading-mobile{
+  font-size: 18vw;
+
+}
+.text-section-top-mobile {
+    flex: 1;
+    padding: 2rem;
+    min-height: 300px; /* Adjust this number to your preference */
+    display: flex;
+    justify-content: center;
+    background-color: #00000070;
+    border: 3px solid #C5B358;
+    border-top: none;
+    color: #C5B358;
+    
+    box-sizing: border-box;
+}
+.text-section-bottom-mobile {
   flex: 1; /* 1/3 of the width */
   color: #C5B358;
 
@@ -98,6 +234,30 @@ margin-bottom: 0;
   border: 3px solid #C5B358;
   border-bottom: none;
 
+}
+.daily-special{
+  display: none;
+}
+.special-today-mobile {
+  animation: pop-today 0.4s ease-in-out forwards;
+  background-color: #22222200;
+  border: 2px solid #C5B358;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 15px gold;
+}
+.sub-text{
+    font-family: "Lobster Two", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6vw;
 
+}
+
+.text-section-top,
+.text-section-bottom,
+.text-section{
+  display: none;
+}
 
 }
