@@ -8,18 +8,24 @@
 .desktop-img {
   display: flex;
   align-items: center;
-  max-width: 2000px;
-margin: 3.3rem auto 3.2rem auto;
-padding: 0 0rem; /* Adds breathing room without breaking centering */
-
-border:  5px solid #C5B358;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  
+  border: 5px solid #C5B358;
+  box-sizing: border-box;
 }
 
 .mobile-img {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1550px) {
   .desktop-img {
     display: none;
   }
