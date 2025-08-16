@@ -42,10 +42,12 @@
 
 }
 .sub-text{
-    font-family: "Lobster Two", sans-serif;
+  /* font-family: "Just Another Hand", cursive; */
+  /* font-family: "Knewave", system-ui; */
+  font-family: "Caveat Brush", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.5vw;
+  font-size: 1.8vw;
 
 }
 .greeting{
@@ -257,11 +259,15 @@ margin-bottom: 4;
   font-style: bold;
 }
 .sub-text{
-    font-family: "Lobster Two", sans-serif;
+  font-family: "Caveat Brush", cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 6vw;
 
+}
+
+.day{
+  font-style: Bold;
 }
 
 .text-section-top,
