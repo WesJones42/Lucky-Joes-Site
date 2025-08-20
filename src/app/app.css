@@ -38,20 +38,37 @@
   font-size: 1.5;
 }
 
+.social-icons {
+  position: absolute;
+  top: 10px;      /* distance from top edge */
+  right: 20px;    /* distance from right edge */
+  display: flex;
+  gap: 35px;
+}
 
+.social-icons a {
+  color: white;
+  font-size: 2.5rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-icons a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
 
 a {
   display: inline-block;
   position: relative;
-  color: #C5B358;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
-  color: rgb(0, 0, 0);
-  text-shadow: 0 0 10px#C5B358;
-  transform: scale(1.05);
+  color: #ffd700;
+  text-shadow: 0 0 100px#C5B358;
+  transform: scale(1.1);
 
   
 }
@@ -137,20 +154,20 @@ a:hover::after {
   gap: 6.0rem;
 
   font-size: 3.4rem;
-  color: white;
+  
 }
 .nav-right {
   display: flex;
   gap: 6.0rem;
   font-size: 2.4rem;
-  color: white;
+  
   justify-content: center;
 }
 .nav-group {
   display: flex;
   gap: 8.0rem;
   font-size: 4.5rem;
-  color: white;
+  
 }
 .nav-spacer {
   width: 680px; /* same width as your logo image */
@@ -170,7 +187,7 @@ a:hover::after {
 .nav-left a,
 .nav-right a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  
   
   
 }
@@ -268,7 +285,7 @@ a:hover::after {
     flex-direction: column;
     align-items: center;
     background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     text-align: center;
     animation: dropdown-fade 0.3s ease;
     border-bottom: 5px solid #C5B358;
@@ -276,6 +293,7 @@ a:hover::after {
     top: 100px;
     width: 100vw; 
     z-index: 999;
+    
 }
 
 .mobile-dropdown-menu a {
@@ -284,6 +302,7 @@ a:hover::after {
     text-decoration: none;
     padding: 0.75rem 0;
     text-align: center;
+    margin-top: 20px;
 }
 
   .mobile-dropdown-menu a:first-child {
@@ -375,6 +394,24 @@ a:hover::after {
 .nav-row{
   display:none;
 }
+
+.social-icons {
+  display: none;
+}
+.social-icons-mobile {
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+.social-icons-mobile a {
+  color: white;
+  font-size: 2.5rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+
 .content {
     padding-top: 100px; /* Adjust based on .bottom-section height */
 }
