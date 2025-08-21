@@ -9,9 +9,9 @@ import { SlideShow } from './slideshow';
   imports: [SlideShow]
 })
 export class Home implements AfterViewInit {
-  slide1 = ['B-Roll1.jpg', 'B-Roll2.jpg', 'B-Roll3.jpg'];
-  slide2 = ['B-Roll4.jpg', 'B-Roll5.jpg', 'B-Roll6.jpg'];
-  slide3 = ['B-Roll7.jpg', 'B-Roll8.jpg', 'B-Roll9.jpg'];
+  slide1 = ['B-Roll2.jpg', 'B-Roll13.jpeg', 'B-Roll3.jpg', 'B-Roll4.jpeg', 'B-Roll1.jpg'];
+  slide2 = ['B-Roll5.jpg', 'B-Roll6.JPG', 'B-Roll7.jpg', 'B-Roll8.jpg', 'B-Roll15.jpg'];
+  slide3 = ['B-Roll9.jpg', 'B-Roll10.jpeg', 'B-Roll11.jpeg', 'B-Roll12.jpeg', 'B-Roll14.jpeg'];
 
   ngAfterViewInit(): void {
     const today = new Date().getDay();
