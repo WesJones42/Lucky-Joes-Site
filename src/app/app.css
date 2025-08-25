@@ -242,7 +242,7 @@ a:hover::after {
   display: none;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1400px) {
 
   /* Collapse top-bar layout for mobile */
   .top-bar {
