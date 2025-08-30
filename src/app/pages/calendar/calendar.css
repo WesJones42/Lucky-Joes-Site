@@ -1,5 +1,5 @@
 body, html {
-  height: 60%;
+  height: 80%;
   margin: 0;
 }
 
@@ -10,19 +10,41 @@ body, html {
   align-items: center;     /* vertical center */
   flex-direction: column;
   padding: 0rem;
-   color:rgba(236, 230, 133, 0.913);
-   font-size: 3rem;
+  color:rgba(236, 230, 133, 0.913);
+  font-size: 3rem;
 }
 
 .calendar-container {
-  width: 95%;
+  width: 92%;
   max-width: 1800px;
 }
 
+
 .calendar-frame {
   width: 100%;
-  height: 900px;
+  height: 80vh;
   border: none;
   border-radius: 10px;
 }
+.page-content-mobile{
+  display: none;
+}
+@media (max-width: 1550px) {
+.page-content{
+  display: none;
+}
+.page-content-mobile {
+  min-height: 100vh; /* full height */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  flex-direction: column;
+  padding: 0rem;
+  color:rgba(236, 230, 133, 0.913);
+  font-size: 3rem;
+}
+.header{
+  font-size: 3rem;
+}
 
+}
