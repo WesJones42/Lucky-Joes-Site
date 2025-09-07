@@ -239,7 +239,8 @@ margin-bottom: 4;
 
 }
 .greeting-heading-mobile{
-  font-size: 18vw;
+  font-size: clamp(10px, 17vw, 200px);
+  
 
 }
 
@@ -247,6 +248,7 @@ margin-bottom: 4;
   display:block;        /* stack the two pieces */
   white-space: nowrap;  /* never wrap inside a line */
   align-items: center;
+
 }
 
 .greeting-logo-mobile {
