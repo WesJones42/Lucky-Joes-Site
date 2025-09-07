@@ -53,7 +53,7 @@
 }
 
 .social-icons a:hover {
-  color: #ffd700;
+  color: #C5B358;;
   transform: scale(1.2);
 }
 
@@ -66,7 +66,7 @@ a {
 }
 
 a:hover {
-  color: #ffd700;
+  color: #C5B358;
   text-shadow: 0 0 100px#C5B358;
   transform: scale(1.1);
 
@@ -101,7 +101,7 @@ a:hover::after {
 }
 
 .logo {
-  height: 500px;
+  height: 425px;
    /* optional: helps the logo pop */
   border-radius: 11%;
   
@@ -128,7 +128,7 @@ a:hover::after {
   background: url('../../public/asfalt--dark--1920x1080.png') repeat center center;
   padding: 0; /* Remove padding so nav truly hugs bottom */
   margin: 0;
-  height: 380px;
+  height: 325px;
   border-top: 5px solid #C5B358;
   border-bottom: 5px solid #C5B358;
   position: relative; /* Needed for absolute positioning of child */
@@ -242,7 +242,7 @@ a:hover::after {
   display: none;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1400px) {
 
   /* Collapse top-bar layout for mobile */
   .top-bar {
