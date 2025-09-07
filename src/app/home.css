@@ -45,7 +45,7 @@
   /* font-family: "Just Another Hand", cursive; */
   /* font-family: "Knewave", system-ui; */
   font-family: "Oswald", sans-serif;
-  font-weight: 350;
+  font-weight: 50;
   font-style: normal;
   font-size: 1.5vw;
 
@@ -301,7 +301,7 @@ margin-bottom: 4;
   font-style: bold;
 }
 .sub-text{
-  font-family: "Caveat Brush", cursive;
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 6vw;

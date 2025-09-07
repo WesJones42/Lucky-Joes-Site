@@ -31,11 +31,15 @@
 
   color: white;
   text-align: center;
-  padding: 1rem 0;
+  padding: .5rem 0;
   font-size: 1.2rem;
   border-top: 5px solid #C5B358;
   border-bottom: 5px solid #C5B358;
-  font-size: 1.5;
+}
+.sub-foot-text{
+  font-size: .7rem;
+  align-items: left;
+  font: none;
 }
 
 .social-icons {
