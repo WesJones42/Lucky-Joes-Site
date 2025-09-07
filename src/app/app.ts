@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
 import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, NgIf],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
   standalone: true
