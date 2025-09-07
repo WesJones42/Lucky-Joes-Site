@@ -246,11 +246,11 @@ margin-bottom: 4;
 .greeting-heading-mobile span{
   display:block;        /* stack the two pieces */
   white-space: nowrap;  /* never wrap inside a line */
+  align-items: center;
 }
 
 .greeting-logo-mobile {
   display: block;
-  margin: .75rem auto 0;
 
   /* responsive width with lower/upper bounds */
   width: clamp(160px, 36vw, 360px);
