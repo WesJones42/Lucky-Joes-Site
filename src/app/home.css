@@ -247,6 +247,7 @@ margin-bottom: 4;
   display:block;        /* stack the two pieces */
   white-space: nowrap;  /* never wrap inside a line */
   align-items: center;
+  width: clamp(160px, 36vw, 360px);
 }
 
 .greeting-logo-mobile {
