@@ -45,15 +45,38 @@
   /* font-family: "Just Another Hand", cursive; */
   /* font-family: "Knewave", system-ui; */
   font-family: "Oswald", sans-serif;
-  font-weight: 350;
+  font-weight: 50;
   font-style: normal;
   font-size: 1.5vw;
 
+
 }
 .greeting{
-font-size: 10rem;
+font-size: clamp(32px, 8vw, 130px);
 margin-top: 0;
 margin-bottom: 4;
+text-align:center;
+
+}
+.greeting span{
+  display:block;        /* stack the two pieces */
+  white-space: nowrap;  /* never wrap inside a line */
+}
+
+.greeting-logo {
+  display: block;
+  margin: .75rem auto 0;
+
+  /* responsive width with lower/upper bounds */
+  width: clamp(160px, 36vw, 360px);
+  height: auto;                /* preserve aspect ratio */
+
+  /* optional extra guardrails */
+  max-height: 30vh;            /* never taller than 28% of viewport */
+  object-fit: contain;         /* if you also set aspect-ratio */
+  /* aspect-ratio: 1 / 1;      // add if you want it to reserve space while loading */
+  transform: rotate(4deg);      /* negative = tilt left, positive = right */
+  transform-origin: 50% 50%;     /* pivot around the center */
 
 }
 .heading{
@@ -138,7 +161,7 @@ margin-bottom: 4;
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 0 15px rgba(1,106,55,255);
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 @keyframes pop-today {
@@ -158,7 +181,7 @@ margin-bottom: 4;
 
 
 
-@media (max-width: 1550px) {
+@media (max-width: 1000px) {
   .container-mobile {
     display: flex;
     flex-direction: column;
@@ -219,6 +242,25 @@ margin-bottom: 4;
   font-size: 18vw;
 
 }
+
+.greeting-heading-mobile span{
+  display:block;        /* stack the two pieces */
+  white-space: nowrap;  /* never wrap inside a line */
+}
+
+.greeting-logo-mobile {
+  display: block;
+  margin: .75rem auto 0;
+
+  /* responsive width with lower/upper bounds */
+  width: clamp(160px, 36vw, 360px);
+  height: auto;                /* preserve aspect ratio */
+
+  /* optional extra guardrails */
+  max-height: 30vh;            /* never taller than 28% of viewport */
+  object-fit: contain;         /* if you also set aspect-ratio */
+  /* aspect-ratio: 1 / 1;      // add if you want it to reserve space while loading */
+}
 .text-section-top-mobile {
     flex: 1;
     padding: 2rem;
@@ -229,7 +271,7 @@ margin-bottom: 4;
     border: 3px solid #C5B358;
     border-top: none;
     color: #C5B358;
-    
+    flex-direction: column;  /* stack */
     box-sizing: border-box;
 }
 .text-section-bottom-mobile {
@@ -259,7 +301,7 @@ margin-bottom: 4;
   font-style: bold;
 }
 .sub-text{
-  font-family: "Caveat Brush", cursive;
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 6vw;
