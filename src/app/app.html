@@ -1,57 +1,69 @@
 <div class="app-wrapper">
   <div>
-  <header>
-    <div class="bottom-section">
-      <div class="logo-container">
-        <a routerLink="/"><img src="lucky-joes-logo2.png" class="logo" /></a>
+    <header>
+      <div class="bottom-section">
+        <div class="logo-container">
+          <a routerLink="/"><img src="lucky-joes-logo2.png" class="logo" /></a>
+        </div>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/luckyjoesfortcollins/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/lucky_joes/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/lucky_joes" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+        <!-- Desktop Nav -->
+        <div class="nav-row">
+          <div class="nav-group nav-left">
+            
+            <a routerLink="/menu">Menu</a>
+            <a routerLink="/drinks">Drinks</a>
+          </div>
+
+          <div class="nav-spacer"></div>
+
+          <div class="nav-group nav-right">
+            <a routerLink="/calendar">Events</a>
+            <a routerLink="/merch">Merch</a>
+
+            
+          </div>
+        </div>
+
+        <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
+          &#8801;
+        </div>
       </div>
-    
-      <!-- Desktop Nav -->
-<div class="nav-row">
-  <div class="nav-group nav-left">
-    <a href="#">Merch</a>
-    <a routerLink="/menu">Menu</a>
-    <a routerLink="/drinks">Drinks</a>
-  </div>
 
-  <!-- spacer to reserve space for logo -->
-  <div class="nav-spacer"></div>
+      <!-- MOBILE MENU + OVERLAY -->
 
-  <div class="nav-group nav-right">
-    <a href="/calendar">Events</a>
-    <a href="#">Hours</a>
-    <a href="#">Contact</a>
-  </div>
-</div>
-    </div>
-  
-    <!-- Mobile Hamburger Button -->
-    <div class="mobile-dropdown-toggle" (click)="toggleDropdown()">
-      &#9776;
-    </div>
+      @if (dropdownOpen) {
+        <div class="mobile-overlay" (click)="closeDropdown()"></div>
 
-    @if (dropdownOpen) {
-      <div class="mobile-dropdown-menu" (click)="closeDropdown()">
-        <a routerLink="/calendar">Events</a>
-        <a routerLink="/menu">Food</a>
-        <a routerLink="/drinks">Drinks</a>
-        <a href="#">Merch</a>
-        <a href="#">Hours</a>
+        <div class="mobile-dropdown-menu">
+          <a routerLink="/calendar" (click)="closeDropdown()">Events</a>
+          <a routerLink="/menu" (click)="closeDropdown()">Food</a>
+          <a routerLink="/drinks" (click)="closeDropdown()">Drinks</a>
+          <a routerLink="/merch" (click)="closeDropdown()">Merch</a>
+            <div class="social-icons-mobile">
+                <a href="https://www.facebook.com/luckyjoesfortcollins/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/lucky_joes/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/lucky_joes" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+      }
+    </header>
 
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
 
+    <footer class="footer-note">
+      <p>11 am - 2 am Everyday</p>
+      <p>(970) 493-2213</p>
+      <p>25 Old Town Square Fort Collins CO, 80524</p>
       
-      </div>
-    }
-  </header>
-
-  <!-- Main content that fills the available space -->
-  <main class="content">
-    <router-outlet></router-outlet>
-  </main>
-
-  <!-- Footer remains at the bottom -->
-  <footer class="footer-note">
-    <p>(970) 493-2213</p>
-    <p>25 Old Town Square Fort Collins CO, 80524</p>
-  </footer>
+      <p class="sub-foot-text">© 2025 Lucky Joe’s. All rights reserved.</p>
+      <!-- <p class="sub-foot-text">Developed & Maintained by Wesley R Jones</p> -->
+    </footer>
+  </div>
 </div>

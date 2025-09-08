@@ -1,10 +1,23 @@
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+
 <div class="container">
   <div class="text-section-top">
-    <h2 class="heading">Welcome to Lucky Joe's Sidewalk Saloon</h2>
-    <p> Northern Colorado's 
-        home of free live music and home cookin. 
-        No matter where you're from we are your 
-        neighborhood bar!</p>
+    <h2 class="greeting">
+      <span>Welcome to </span>
+      <span>Lucky Joe's!</span>
+    </h2>
+    <img
+      class="greeting-logo"
+      src="Celtic-LJ-logo.PNG"
+      width="320" height="320"
+
+    >
+    <span class="sub-text">Est. 1995</span>
   </div>
 
   <div class="slideshow-section">
@@ -17,36 +30,99 @@
     <app-slide-show [images]="slide2"></app-slide-show>
   </div>
 
-  <div class="text-section">
-    <h2 class="heading">Daily Specials</h2>
-    <p>Monday: $4.99 Burger Basket    
-
-    </p>Tuesday: $4 Guinness Pints from Noon - 10pm
-    
-    <p>Wednesday: Irish Whiskey Wednesdays 5pm - 10pm</p>
-
-    <p>Thursday: 4$ Coffee Bombs</p>
-
-    <p>Sunday: $2 Bloody Marys and $2 Well Vodka Drinks</p>
+    <div class="text-section">
+      <div id="daily-special">
+        <h2 class="heading">Daily Specials</h2>
+        <p class="sub-text" data-day="1"> <strong>Monday</strong>: $4.99 Burger Basket</p>
+        <p class="sub-text" data-day="2"><strong>Tuesday</strong>: $4 Guinness Pints </p>
+        <p class="sub-text" data-day="3"><strong>Wednesday</strong>: Irish Whiskey Wednesdays 5pm - 2am</p>
+        <p class="sub-text" data-day="4"><strong>Thursday</strong>: $4 All Bomb Shots 7pm - 2am</p>
+        <p class="sub-text" data-day="5"><strong>Friday</strong>: $5.50 Jameson & Ginger Ales</p>
+        <p class="sub-text" data-day="6"><strong>Saturday</strong>: $5.50 Jameson & $3.50 Lone Stars</p>
+        <p class="sub-text" data-day="0"><strong>Sunday</strong>: $3 Bloody Marys & $3 Well Vodka Drinks</p>
+      </div>
   </div>
 </div>
 
 <div class="container">
+  
   <div class="text-section-bottom">
-    <h2 class="heading">We like to think of Lucky Joe’s</h2>
-    <p> as a friendly Irish Pub in an Old Western Saloon. 
-        Relax and be our guests for a fun and casual dining 
-        experience. Starting with the finest, 
-        fresh ingredients that we can find, 
-        we home-cook them with pride and care for a 
-        wonderful lunch, dinner or snack. 
-        We feature an extensive list of beers from very near 
-        and very far, a thoughtful wine selection and cocktails 
-        for kids of all ages. Combined with our Old Town 
-        atmosphere and Old-Fashioned hospitality, 
-        you can’t help but have a Good Ole Time at Lucky Joe's. </p>
+    <h2 class="heading">Come Visit Us!</h2>
+    <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3006.252088289233!2d-105.07892862400814!3d40.58744697141267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87694a8b2ff92d1d%3A0x678a0b546d610269!2sLucky%20Joe&#39;s%20Sidewalk%20Saloon!5e1!3m2!1sen!2sus!4v1752351194023!5m2!1sen!2sus" 
+    width="740" 
+    height="650" 
+    style="border:3px solid #C5B358;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+  </div>
+
   <div class="slideshow-section">
     <app-slide-show [images]="slide3"></app-slide-show>
   </div>
 </div>
+
+
+
+
+
+<div>
+
+
+  <div class="slideshow-section-mobile">
+    <app-slide-show [images]="slide1"></app-slide-show>
+  </div>
+
+  <div class="container-mobile">
+  <div class="text-section-mobile">
+    <h2 class="greeting-heading-mobile">
+      <span>Welcome to </span>
+      <span>Lucky Joe's!</span>
+    </h2>
+    <img
+      class="greeting-logo"
+      src="Celtic-LJ-logo.PNG"
+      width="320" height="320"
+    
+    >
+  </div>
+
+   <div class="slideshow-section-mobile">
+    <app-slide-show [images]="slide2"></app-slide-show>
+    </div>
+
+    <div class="text-section-mobile">
+      <div id="daily-special">
+        <h2 class="heading-mobile">Daily Specials</h2>
+        <p class="sub-text" data-day="1"> <strong>Monday</strong>: $4.99 Burger Basket</p>
+        <p class="sub-text" data-day="2"><strong>Tuesday</strong>: $4 Guinness Pints </p>
+        <p class="sub-text" data-day="3"><strong>Wednesday</strong>: Irish Whiskey Wednesdays 5pm - 2am</p>
+        <p class="sub-text" data-day="4"><strong>Thursday</strong>: $4 All Bomb Shots 7pm - 2am</p>
+        <p class="sub-text" data-day="5"><strong>Friday</strong>: $5.50 Jameson & Ginger Ales</p>
+        <p class="sub-text" data-day="6"><strong>Saturday</strong>: $5.50 Jameson & $3.50 Lone Stars</p>
+        <p class="sub-text" data-day="0"><strong>Sunday</strong>: $3 Bloody Marys & $3 Well Vodka Drinks</p>
+        </div>
+      </div>
+  
+  <div class="slideshow-section-mobile">
+    <app-slide-show [images]="slide3"></app-slide-show>
+  </div>
+      <div class="text-section-bottom-mobile">
+    <h2 class="heading-mobile">Come Visit Us!</h2>
+    <div class="map-container-mobile">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3006.252088289233!2d-105.07892862400814!3d40.58744697141267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87694a8b2ff92d1d%3A0x678a0b546d610269!2sLucky%20Joe&#39;s%20Sidewalk%20Saloon!5e1!3m2!1sen!2sus!4v1752351194023!5m2!1sen!2sus" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  
+</div>
+</div>
+
+ 
