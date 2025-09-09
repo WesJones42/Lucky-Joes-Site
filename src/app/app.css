@@ -142,10 +142,10 @@ a:hover::after {
 .nav-row {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 1; right: 1;  
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* left, logo spacer, right */
+  grid-template-columns: minmax(0,1fr) max-content minmax(0,1fr);
   justify-content: space-between;
   align-items: flex-end; /* ensures same vertical alignment */
   padding: 0 3rem;
@@ -174,7 +174,7 @@ a:hover::after {
   
 }
 .nav-spacer {
-  width: 680px; /* same width as your logo image */
+  width: clamp(240px, 35vw, 680px);   /* shrinks on smaller screens */
   flex-shrink: 0;
 }
 
@@ -246,7 +246,7 @@ a:hover::after {
   display: none;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
 
   /* Collapse top-bar layout for mobile */
   .top-bar {

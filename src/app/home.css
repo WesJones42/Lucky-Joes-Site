@@ -15,6 +15,7 @@
 .container {
   display: flex;
   height: auto;
+  flex-wrap: wrap;
   align-items: stretch;
 }
 .container-mobile{
@@ -45,11 +46,11 @@
   /* font-family: "Just Another Hand", cursive; */
   /* font-family: "Knewave", system-ui; */
   font-family: "Oswald", sans-serif;
-  font-weight: 50;
   font-style: normal;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
   text-align: center;
-
+  font-size: clamp(.8rem, 1vw, 1.5);
+  overflow-wrap: anywhere;
 
 }
 .greeting{
@@ -81,7 +82,7 @@ text-align:center;
 
 }
 .heading{
-font-size: 6.1rem;
+font-size: clamp(4.95rem, 1.5vw, 6.25rem);
 margin-top: 0;
 margin-bottom: 4;
 
@@ -107,7 +108,8 @@ margin-bottom: 4;
 }
 
 .slideshow-section {
-  flex: 2; /* 2/3 of the width */
+  flex: 2 1 48rem;   /* 2/3 of the width */
+  min-width: 0;  
   overflow: hidden;
   height: auto;
   background-color: black;
@@ -116,18 +118,19 @@ margin-bottom: 4;
   display: none;
 }
 .text-section {
-  flex: 1; /* 1/3 of the width */
+  flex: 1 1 28rem; 
   color: #C5B358;
   padding: 2rem;
   background-color: #00000070;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1vw;
+  font-size: 2rem;
   border: 3px solid #C5B358;
+  min-width: 0;   
 }
 .text-section-top {
-  flex: 1; /* 1/3 of the width */
+  flex: 1 1 28rem; 
   color: #C5B358;
   padding: 2rem;
   background-color: #00000070;
@@ -139,7 +142,7 @@ margin-bottom: 4;
   border-top: none;
 }
 .text-section-bottom {
-  flex: 1; /* 1/3 of the width */
+  flex: 1 1 28rem; 
   color: #C5B358;
   
   padding: 2rem;
@@ -182,7 +185,7 @@ margin-bottom: 4;
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1400px) {
   .container-mobile {
     display: flex;
     flex-direction: column;
