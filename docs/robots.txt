@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luckyjoes.com/sitemap.xml
