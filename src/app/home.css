@@ -242,8 +242,8 @@ margin-bottom: 4;
 }
 
 .heading-mobile{
-  font-size: 12vw;
-
+  font-size: 15vw;
+  text-align: center;
 }
 .greeting-heading-mobile{
   font-size: clamp(10px, 17vw, 200px);
