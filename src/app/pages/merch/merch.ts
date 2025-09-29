@@ -12,6 +12,8 @@ import { DOCUMENT } from '@angular/common';
 declare global {
   interface Window {
     ShopifyBuy?: any;
+    __sbClient?: any; // singleton client
+    __sbUI?: any;     // singleton UI
   }
 }
 
@@ -24,7 +26,9 @@ declare global {
 })
 export class MerchComponent implements AfterViewInit, OnDestroy {
   @ViewChild('buyContainer', { static: true }) buyContainer!: ElementRef<HTMLDivElement>;
-  private uiInstance?: any;
+
+  private uiCollectionInstance?: any; // per-page collection grid
+  private cartInstance?: any;         // per-page inline cart
 
   // === Your real values from the snippet ===
   private readonly domain = 'jjwsh6-59.myshopify.com';
@@ -32,28 +36,29 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
   private readonly collectionId = '298188898374';
   private readonly nodeId = 'collection-component-1758760578590';
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private zone: NgZone
-  ) {}
+  constructor(@Inject(DOCUMENT) private document: Document, private zone: NgZone) {}
 
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(async () => {
       await this.ensureSdk();
-      this.initBuyButton();
+      await this.initBuyButton();
     });
   }
 
   ngOnDestroy(): void {
+    // destroy only things created for this page
+    try { this.uiCollectionInstance?.destroyComponent?.(); } catch {}
     try {
-      if (this.uiInstance?.destroyComponent) this.uiInstance.destroyComponent();
+      this.cartInstance?.destroyComponent?.();
+      this.cartInstance = undefined;
     } catch {}
   }
 
+  // --- load the Buy Button SDK if needed ---
   private ensureSdk(): Promise<void> {
     const src = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
     const existing = this.document.querySelector<HTMLScriptElement>(`script[src="${src}"]`);
-    if (existing && (window.ShopifyBuy?.UI)) return Promise.resolve();
+    if (existing && window.ShopifyBuy?.UI) return Promise.resolve();
 
     return new Promise<void>((resolve) => {
       const script = this.document.createElement('script');
@@ -64,146 +69,183 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
     });
   }
 
- private initBuyButton(): void {
-  const ShopifyBuy = window.ShopifyBuy;
-  if (!ShopifyBuy) return;
+  // --- create/reuse client+UI, then build page components ---
+  private async initBuyButton(): Promise<void> {
+    const ShopifyBuy = window.ShopifyBuy;
+    if (!ShopifyBuy) return;
 
-  const client = ShopifyBuy.buildClient({
-    domain: this.domain,
-    storefrontAccessToken: this.storefrontAccessToken,
-  });
-
-  ShopifyBuy.UI.onReady(client).then((ui: any) => {
-    // Collection of products
-    this.uiInstance = ui.createComponent('collection', {
-      id: Number(this.collectionId),
-      node: this.document.getElementById(this.nodeId)!,
-      moneyFormat: '%24%7B%7Bamount%7D%7D',
-      options: {
-        ...this.options(),
-        // make sure popup is off for this collection's shared cart
-        cart: { ...(this.options().cart || {}), popup: false },
-      },
-    });
-
-    // Inline cart component rendered where you want it on the page
-    ui.createComponent('cart', {
-      node: this.document.getElementById('inline-cart-container')!,
-      options: {
-        styles: {
-          cart:   { 'background-color': '#000000' },
-          footer: { 'background-color': '#ffffff' },
-          button: { 'border-radius': '7px' }
-        },
-        text: { title: 'Your Cart', total: 'Subtotal', button: 'Checkout' }
-      }
-    });
-  });
-}
-
-  // === EXACT options from your Shopify snippet, expressed as TS object ===
-private options() {
-  return {
-    product: {
-      isButton: false,
-      contents: { img: true, title: true, price: true, button: true, options: true },
-      styles: {
-            product: {
-      // card container styles
-              
-              
-    },
-    title: {
-      'color': '#C5B358',       // 👈 product name text
-      'font-weight': 'bold',
-      'font-size': '25px'
-    },
-    price: {
-      'color': '#C5B358',       // 👈 product price text
-      'font-size': '18px'
-    },
-        // 🔑 Do NOT set width/maxWidth here—let perRow control the grid
-        button: {
-          borderRadius: '7px',
-          paddingLeft: '24px',
-          paddingRight: '24px',
-          background: '#C5B358',
-          
-
-          ':hover': {
-            'background-color': '#016c38',  // red on hover
-            'color': '#ffffff'              // white text on hover
-      }
-          
-        }
-      },
-      text: { button: 'Add to cart' },
-      googleFonts: ['Lato']
-    },
-
-    // 🔑 This makes it a grid
-    productSet: {
-      perRow: 2,     // 3 cards per row
-      perPage: 12,   // load up to 12 items
-      // (optional) small tidy:
-      styles: { products: { '@media (min-width: 101px)': { marginLeft: '2' } } }
-    },
-
-    modalProduct: {
-      contents: { img: true, imgWithCarousel: true, buttonWithQuantity: true },
-      styles: {
-        product: {
-          '@media (min-width: 601px)': { maxWidth: '80%', marginLeft: '0', marginBottom: '0' }
-        },
-        button: {
-          fontFamily: 'Lato, sans-serif',
-          fontWeight: 'bold',
-          borderRadius: '7px',
-          paddingLeft: '54px',
-          paddingRight: '54px',
-          background: '#C5B358'
-        }
-      },
-      googleFonts: ['Lato'],
-      text: { button: 'Add to cart' }
-    },
-
-    cart: {
-      popup: false,
-      styles: {
-        button: { fontFamily: 'Lato, sans-serif', fontWeight: 'bold', borderRadius: '7px' },
-        cart:   { 
-                  'background-color': '#016c38', 
-                  'border': '3px solid #C5B358'
-                },
-        
-        footer: { 
-                  'background-color': '#016c38', 
-                  'border-top': '3px solid #C5B358'
-                }
-      },
-      text: { total: 'Subtotal', button: 'Checkout' },
-      googleFonts: ['Lato']
-    },
-
-    toggle: {
-      styles: {
-        toggle: { fontFamily: 'Lato, sans-serif', fontWeight: 'bold', backgroundColor: '#C5B358' }
-      },
-      googleFonts: ['Lato']
-    },
-
-    lineItem: {
-      styles: {
-        variantTitle: { color: '#000000ff' }, title: { color: '#000000ff' }, price: { color: '#000000ff' },
-        fullPrice: { color: '#000000ff' }, discount: { color: '#000000ff' }, discountIcon: { fill: '#000000ff' },
-        quantity: { color: '#000000ff' },
-        quantityIncrement: { color: '#fa0000', borderColor: '#fa0000' },
-        quantityDecrement: { color: '#fa0000', borderColor: '#fa0000' },
-        quantityInput: { color: '#fa0000', borderColor: '#fa0000' }
-      }
+    // client singleton
+    if (!window.__sbClient) {
+      window.__sbClient = ShopifyBuy.buildClient({
+        domain: this.domain,
+        storefrontAccessToken: this.storefrontAccessToken,
+      });
     }
-  };
-}
-  
+
+    // UI singleton
+    const ui = window.__sbUI ?? (await ShopifyBuy.UI.onReady(window.__sbClient));
+    window.__sbUI = ui;
+
+    // collection for THIS page (safe to recreate on each visit)
+    const node = this.document.getElementById(this.nodeId);
+    if (node) {
+      this.uiCollectionInstance = ui.createComponent('collection', {
+        id: Number(this.collectionId),
+        node,
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          ...this.options(),
+          // ensure shared options keep popup off so no fallback popup is created
+          cart: { ...(this.options().cart || {}), popup: false },
+        },
+      });
+    }
+
+  //   // per-page inline cart (destroyed in ngOnDestroy to avoid duplicates)
+  //   const cartNode = this.document.getElementById('inline-cart-container');
+  //   if (cartNode) {
+  //     this.cartInstance = ui.createComponent('cart', {
+  //       node: cartNode,
+  //       options: {
+  //         styles: {
+  //           cart:   { 'background-color': '#000000' },
+  //           footer: { 'background-color': '#ff0000ff' },
+  //           button: { 'border-radius': '7px' },
+  //         },
+  //         text: { title: 'Your Cart', total: 'Subtotal', button: 'Checkout' },
+  //       },
+  //     });
+  //   }
+   }
+
+  // --- your Buy Button options (unchanged except lineItem.title template uses <a>) ---
+  private options() {
+    return {
+      product: {
+        isButton: false,
+        contents: { img: true, title: true, price: true, button: true, options: true },
+        styles: {
+          product: {
+            'border': '3px solid #C5B358',
+            'background': "url('assets/asfalt--dark.png') repeat center center",
+            'background-size': 'cover',
+            'paddingBottom': '20px',
+          },
+          title: {
+            'color': '#C5B358',
+            'font-weight': 'bold',
+            'font-size': '25px',
+          },
+          price: {
+            'color': '#C5B358',
+            'font-size': '18px',
+          },
+          // let perRow control grid; don't hard-set width here
+          button: {
+            borderRadius: '7px',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            background: '#C5B358',
+            marginTop: '10px',
+            marginBottom: '20px',
+            ':hover': {
+              'transform': 'scale(1.2)',
+              background: '#C5B358',
+            },
+          },
+          buttonWrapper: { 'margin-bottom': '20px' },
+        },
+        text: { button: 'Add to cart', paddingBottom: '30px' },
+        googleFonts: ['Lato'],
+      },
+
+      // grid
+      productSet: {
+        perRow: 2,
+        perPage: 12,
+        styles: { products: { '@media (min-width: 101px)': { marginLeft: '2' } } },
+      },
+
+      modalProduct: {
+        contents: { img: true, imgWithCarousel: true, buttonWithQuantity: true },
+        styles: {
+          product: { '@media (min-width: 601px)': { maxWidth: '80%', marginLeft: '0', marginBottom: '0' } },
+          button: {
+            fontFamily: 'Lato, sans-serif',
+            fontWeight: 'bold',
+            borderRadius: '7px',
+            paddingLeft: '54px',
+            paddingRight: '54px',
+            background: '#C5B358',
+          },
+        },
+        googleFonts: ['Lato'],
+        text: { button: 'Add to cart' },
+      },
+
+      cart: {
+        popup: false,
+        styles: {
+          cart: {
+            'background': "url('assets/asfalt--dark.png') repeat center center",
+            'border': '3px solid #C5B358',
+            
+          },
+          header: { 'color': '#C5B358', 'font-size': '15px' },
+          title: { 'color': '#C5B358' },
+          close: { 'color': '#C5B358', 'border-color': '#C5B358', ':hover': { 'transform': 'scale(1.3)','color': '#C5B358' }},
+          empty: { 'color': '#C5B358' },
+          footer: {
+            'background': "url('assets/asfalt--dark.png') repeat center center",
+            'border-top': '3px solid #C5B358',
+          },
+          subtotalText: { 'color': '#C5B358' },
+          subtotal: { 'color': '#C5B358' },
+          notice: { 'color': '#C5B358' },
+
+          button: {
+            'background-color': '#C5B358',   // gold background
+            'color': '#000000',              // black text
+            'border-radius': '7px',
+            'font-weight': 'bold',
+            ':hover': {
+              'background-color': '#e0b84f', // lighter gold hover
+              'transform': 'scale(1.05)',
+      }
+    },
+        },
+        text: { total: 'Subtotal', button: 'Checkout', 'color': '#C5B358' },
+        googleFonts: ['Lato'],
+      },
+
+      toggle: {
+        styles: {
+          toggle: {
+            fontFamily: 'Lato, sans-serif',
+            fontWeight: 'bold',
+            'background-color': '#C5B358',
+            ':hover': { 'transform': 'scale(1.1)', background: '#C5B358' },
+          },
+        },
+        googleFonts: ['Lato'],
+      },
+
+      lineItem: {
+        templates: {
+          // keep anchor so built-in spacing applies; force your color
+          title: '<p class="{{data.classes.lineItem.title}}" style="color:#C5B358;display:block;margin-left:72px;">{{data.title}}</p>',
+        },
+        styles: {
+          variantTitle: { 'color': '#C5B358' },
+          price:        { 'color': '#C5B358' },
+          fullPrice:    { 'color': '#C5B358' },
+          discount:     { 'color': '#C5B358' },
+          quantity:     { 'color': '#C5B358', 'border-color': '#C5B358' },
+          quantityInput:{ 'color': '#C5B358', 'border-color': '#C5B358' },
+          quantityIncrement:{ 'color': '#C5B358', 'border-color': '#C5B358' },
+          quantityDecrement:{ 'color': '#C5B358', 'border-color': '#C5B358' },
+        },
+      },
+    };
+  }
 }

@@ -27,14 +27,16 @@ body, html {
   width: 650px;     /* Set desired width (adjust as needed) */
 }
 
+
+.shopify-buy__cart-item__title a {
+  color: #C5B358 !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
 @media (max-width: 1550px) {
 .heading{
   font-size: 8vh;
 }
-.shopify-buy__cart-toggle { display: none !important; }
 
-#inline-cart-container {
-  max-width: 960px;
-  margin: 32px auto;
-}
 }
