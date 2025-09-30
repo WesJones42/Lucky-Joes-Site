@@ -164,7 +164,7 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
       productSet: {
         perRow: 2,
         perPage: 12,
-        styles: { products: { '@media (min-width: 101px)': { marginLeft: '2' } } },
+        styles: { products: { '@media (min-width: 80px)': { marginLeft: '2' } } },
       },
 
       modalProduct: {

@@ -47,7 +47,7 @@
   /* font-family: "Knewave", system-ui; */
   font-family: "Oswald", sans-serif;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 70%;
   text-align: center;
   font-size: clamp(.8rem, 1vw, 1.5);
   overflow-wrap: anywhere;
@@ -56,7 +56,7 @@
 .greeting{
 font-size: clamp(32px, 8vw, 130px);
 margin-top: 0;
-margin-bottom: 4;
+margin-bottom: 3;
 text-align:center;
 
 }
@@ -67,7 +67,7 @@ text-align:center;
 
 .greeting-logo {
   display: block;
-  margin: .75rem auto 0;
+  margin: .7rem auto 0;
 
   /* responsive width with lower/upper bounds */
   width: clamp(160px, 36vw, 360px);
@@ -82,7 +82,7 @@ text-align:center;
 
 }
 .heading{
-font-size: clamp(4.95rem, 1.5vw, 6.25rem);
+font-size: clamp(4.00rem, 1.5vw, 6.00rem);
 margin-top: 0;
 margin-bottom: 4;
 
