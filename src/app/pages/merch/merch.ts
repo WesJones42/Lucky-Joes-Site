@@ -123,7 +123,7 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
     return {
       product: {
         isButton: false,
-        contents: { img: true, title: true, price: true, button: true, options: true },
+        contents: { img: false, imgWithCarousel: true, title: true, price: true, button: true, options: true },
         styles: {
           product: {
             'border': '3px solid #C5B358',
@@ -131,6 +131,7 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
             'background-size': 'cover',
             'paddingBottom': '20px',
           },
+          
           title: {
             'color': '#C5B358',
             'font-weight': 'bold',

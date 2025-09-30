@@ -27,6 +27,10 @@ body, html {
   width: 650px;     /* Set desired width (adjust as needed) */
 }
 
+.merch-wrap{
+  margin: 5%;
+}
+
 
 .shopify-buy__cart-item__title a {
   color: #C5B358 !important;
