@@ -8,6 +8,7 @@ body, html {
   display: block;
   margin: 1rem 0;
   text-align: center; /* optional */
+  padding-top: 3rem;
 }
 
 .page-content {

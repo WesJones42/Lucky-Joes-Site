@@ -124,13 +124,37 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
       product: {
         isButton: false,
         contents: { img: false, imgWithCarousel: true, title: true, price: true, button: true, options: true },
+        option: {
+          // force the label color via template (works even if styles miss)
+          templates: {
+            option:
+              `<div class="{{data.classes.option.option}}">
+                <label class="{{data.classes.option.label}}"
+                        style="color:#C5B358;opacity:1;font-weight:bold;font-size:14px;text-transform:uppercase;">
+                  {{data.name}}
+                </label>
+                {{data.select}}
+              </div>`
+          },
+        },
+        
         styles: {
           product: {
             'border': '3px solid #C5B358',
             'background': "url('assets/asfalt--dark.png') repeat center center",
             'background-size': 'cover',
-            'paddingBottom': '20px',
+            'paddingBottom': '15px',
+            'padding-top' : '15px',
+            'padding-right': '5px',
+            'padding-left': '5px',
           },
+            optionLabel: {
+              'color': '#C5B358',      // your gold tone
+              'font-weight': 'bold',
+              'font-size': '14px',
+              'text-transform': 'uppercase',
+              'opacity': '1'    
+              },
           
           title: {
             'color': '#C5B358',
@@ -159,7 +183,35 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
         text: { button: 'Add to cart', paddingBottom: '30px' },
         googleFonts: ['Lato'],
       },
+      option: {
 
+        styles: {
+          // Label text — “Color”, “Size”
+          label: {
+            'color': '#C5B358',
+            'font-weight': 'bold',
+            'font-size': '14px',
+            'text-transform': 'uppercase',
+            'opacity': '1'
+          },
+
+          // Dropdown itself
+          select: {
+            'border': '2px solid #C5B358',
+            'border-radius': '4px',
+            'background-color': '#ffffffff',  // dark background to match your theme
+            'color': '#000000ff',
+            'padding': '4px 8px'
+          },
+
+          // The container div around each variant row
+          option: {
+            'margin-top': '6px',
+            'margin-bottom': '6px'
+          }
+        }
+      },
+      
       // grid
       productSet: {
         perRow: 2,
