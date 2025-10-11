@@ -1,41 +1,43 @@
 <!doctype html>
-<base href="/">
-
 <html lang="en">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lucky Joes</title>
 
+  <!-- base MUST be inside <head> -->
+  <base href="/">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Lucky Joe's",
     "url": "https://www.luckyjoes.com",
-    "logo": "https://www.luckyjoes.com/src/assests/Celtic-LJ-logo.PNG",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "25 Old Town Square",
-      "addressLocality": "Fort Collins",
-      "addressRegion": "CO",
-      "postalCode": "80524",
-      "addressCountry": "US"
-    },
-    "telephone": "+1-970-493-2213"
-}
-</script>
-
-
-
-
+    "logo": "https://www.luckyjoes.com/src/assets/Celtic-LJ-logo.PNG"
+    
+  }
+  </script>
 </head>
 <body>
   <app-root></app-root>
+
+  <!-- Restore the deep link that 404.html saved -->
+  <script>
+    (function () {
+      var r = sessionStorage.redirectPath;
+      if (r) {
+        try { delete sessionStorage.redirectPath; } catch(e) { sessionStorage.redirectPath = ""; }
+        // Put the original /menu (etc.) back into the URL bar so Angular sees it
+        window.history.replaceState(null, "", r);
+      }
+    })();
+  </script>
 </body>
 </html>
