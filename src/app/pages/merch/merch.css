@@ -2,8 +2,13 @@ body, html {
   height: 60%;
   margin: 0;
 }
-.heading{
-    font-size: 10vh;
+.heading {
+  font-size: 10vh;
+  color: #C5B358;   /* 👈 or any contrasting color */
+  display: block;
+  margin: 1rem 0;
+  text-align: center; /* optional */
+  padding-top: 3rem;
 }
 
 .page-content {
@@ -23,8 +28,20 @@ body, html {
   width: 650px;     /* Set desired width (adjust as needed) */
 }
 
+.merch-wrap{
+  margin: 5%;
+}
+
+
+.shopify-buy__cart-item__title a {
+  color: #C5B358 !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
 @media (max-width: 1550px) {
 .heading{
   font-size: 8vh;
 }
+
 }
