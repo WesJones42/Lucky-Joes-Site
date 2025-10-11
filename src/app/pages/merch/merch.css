@@ -2,13 +2,8 @@ body, html {
   height: 60%;
   margin: 0;
 }
-.heading {
-  font-size: 10vh;
-  color: #C5B358;   /* 👈 or any contrasting color */
-  display: block;
-  margin: 1rem 0;
-  text-align: center; /* optional */
-  padding-top: 3rem;
+.heading{
+    font-size: 10vh;
 }
 
 .page-content {
@@ -18,7 +13,7 @@ body, html {
   align-items: center;     /* vertical center */
   flex-direction: column;
   padding: 0rem;
-   color:rgba(236, 230, 133, 0.913);
+  color:#C5B358;
    font-size: 3rem;
 }
 
@@ -28,20 +23,8 @@ body, html {
   width: 650px;     /* Set desired width (adjust as needed) */
 }
 
-.merch-wrap{
-  margin: 5%;
-}
-
-
-.shopify-buy__cart-item__title a {
-  color: #C5B358 !important;
-  opacity: 1 !important;
-  text-decoration: none !important;
-}
-
 @media (max-width: 1550px) {
 .heading{
   font-size: 8vh;
 }
-
 }
