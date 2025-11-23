@@ -147,7 +147,6 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
             'padding-top' : '15px',
             'padding-right': '5px',
             'padding-left': '5px',
-            'min-height': '710px',
           },
             optionLabel: {
               'color': '#C5B358',      // your gold tone
@@ -231,8 +230,6 @@ export class MerchComponent implements AfterViewInit, OnDestroy {
             paddingLeft: '54px',
             paddingRight: '54px',
             background: '#C5B358',
-            'align-items': 'stretch',
-
           },
         },
         googleFonts: ['Lato'],
