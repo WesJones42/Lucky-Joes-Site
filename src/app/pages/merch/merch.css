@@ -3,12 +3,24 @@ body, html {
   margin: 0;
 }
 .heading {
-  font-size: 10vh;
-  color: #C5B358;   /* 👈 or any contrasting color */
+  font-size: 12vh;
+  color: #C5B358;   /*  or any contrasting color */
   display: block;
   margin: 1rem 0;
   text-align: center; /* optional */
   padding-top: 3rem;
+}
+.p-text{
+  font-size: 3vh;
+  color: #C5B358;   /*  or any contrasting color */
+  display: block;
+  margin: .5rem 0;
+  text-align: center; /* optional */
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  margin-left: 5%;
+  margin-right: 5%;
+
 }
 
 .page-content {
